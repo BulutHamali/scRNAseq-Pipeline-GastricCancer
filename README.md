@@ -22,23 +22,23 @@ git clone git@github.com:BulutHamali/scRNAseq-Pipeline-GastricCancer.git
 Dependencies
 Required Python packages:
 
-pandas (data manipulation)
-numpy (numerical computations)
-scanpy (single-cell analysis)
-anndata (annotated data)
-matplotlib & seaborn (visualization)
-scikit-learn (machine learning)
-umap-learn (dimensional reduction)
-scipy (scientific computing)
-gprofiler-official (functional enrichment)
+-pandas (data manipulation)
+-numpy (numerical computations)
+-scanpy (single-cell analysis)
+-anndata (annotated data)
+-matplotlib & seaborn (visualization)
+-scikit-learn (machine learning)
+-umap-learn (dimensional reduction)
+-scipy (scientific computing)
+-gprofiler-official (functional enrichment)
 
 Install all dependencies:
-```bash
+```sh
 pip install -r requirements.txt
 ```
 
 Pipeline Components
-1. Data Processing Module
+1. **Data Processing Module**
 ```python
 pythonCopyfrom src.preprocessing.data_processor import GastricCancerProcessor
 processor = GastricCancerProcessor('data/raw/counts_matrix.csv')
@@ -48,7 +48,7 @@ processor.filter_cells()
 ```
 
 
-3. Dimensional Reduction
+2. **Dimensional Reduction**
 ```python
 pythonCopyfrom src.analysis.dimension_reducer import DimensionReducer
 reducer = DimensionReducer(processed_data)
@@ -57,14 +57,14 @@ reducer.run_umap()
 reducer.run_tsne()
 ```
 
-5. Clustering Analysis
+3. **Clustering Analysis**
 ```python
 pythonCopyfrom src.analysis.cluster_analyzer import ClusterAnalyzer
 analyzer = ClusterAnalyzer(reduced_data)
 analyzer.perform_clustering(methods=['leiden', 'louvain', 'kmeans'])
 analyzer.evaluate_clusters()
 ```
-7. Biological Interpretation
+4. **Biological Interpretation**
 ```python
 pythonCopyfrom src.analysis.gene_analyzer import GeneAnalyzer
 gene_analyzer = GeneAnalyzer(clustered_data)
@@ -73,38 +73,46 @@ gene_analyzer.perform_go_analysis()
 ```
 
 
-Documentation
+## Documentation
 
 Detailed tutorials and examples can be found in the 'analysis' directory
 Pipeline results are stored in the 'results' directory
 Documentation for each module is available in the 'documentation' directory
 
-Project Structure
-CopyscRNAseq-Pipeline-GastricCancer/
-├── analysis/          # Analysis notebooks
-├── data/             # Data directory
-│   ├── raw/          # Raw data files
-│   └── processed/    # Processed data files
-├── results/          # Analysis results
-│   ├── figures/      # Generated plots
-│   └── tables/       # Result tables
-├── src/              # Source code
-│   ├── preprocessing/
-│   ├── analysis/
-│   └── visualization/
-└── documentation/    # Project documentation
-Contributing
-Contributions to improve the pipeline are welcome. Please read the contribution guidelines before submitting pull requests.
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-Acknowledgments
+### Project Structure
+```sh
+scRNAseq-Pipeline-GastricCancer/
+├── analysis/                # Analysis notebooks and scripts
+├── data/                   # Data directory
+│   ├── raw/               # Raw count matrices and metadata
+│   └── processed/         # Processed and normalized data
+├── results/               # Analysis results
+│   ├── figures/          # Generated visualizations
+│   └── tables/           # Statistical outputs and gene lists
+├── src/                   # Source code
+│   ├── preprocessing/    # Data preprocessing modules
+│   ├── analysis/        # Core analysis functions
+│   └── visualization/   # Plotting and visualization tools
+└── documentation/         # Project documentation and reports
+```
 
+## Contributing
+Contributions to improve the pipeline are welcome. Please read the contribution guidelines before submitting pull requests.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
 Based on scRNA-seq data from GEO (GSE158631)
 Inspired by current methodologies in single-cell analysis
 Developed using open-source bioinformatics tools
 
-Author
+## Author
 Bulut Hamali
 
-Contact
+## Contact
 For questions or collaboration opportunities, please open an issue or contact through GitHub.
+
+
+
+
