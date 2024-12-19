@@ -49,7 +49,7 @@ processor.filter_cells()
 
 
 3. Dimensional Reduction
-```bash
+```python
 pythonCopyfrom src.analysis.dimension_reducer import DimensionReducer
 reducer = DimensionReducer(processed_data)
 reducer.run_pca()
@@ -58,19 +58,21 @@ reducer.run_tsne()
 ```
 
 5. Clustering Analysis
-```bash
+```python
 pythonCopyfrom src.analysis.cluster_analyzer import ClusterAnalyzer
 analyzer = ClusterAnalyzer(reduced_data)
 analyzer.perform_clustering(methods=['leiden', 'louvain', 'kmeans'])
 analyzer.evaluate_clusters()
 ```
 7. Biological Interpretation
-```bash
+```python
 pythonCopyfrom src.analysis.gene_analyzer import GeneAnalyzer
 gene_analyzer = GeneAnalyzer(clustered_data)
 gene_analyzer.find_markers()
 gene_analyzer.perform_go_analysis()
 ```
+
+
 Documentation
 
 Detailed tutorials and examples can be found in the 'analysis' directory
@@ -103,10 +105,6 @@ Developed using open-source bioinformatics tools
 
 Author
 Bulut Hamali
-
-Author
-
-Elif Hamali
 
 Contact
 For questions or collaboration opportunities, please open an issue or contact through GitHub.
