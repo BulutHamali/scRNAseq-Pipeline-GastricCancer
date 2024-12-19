@@ -1,10 +1,3 @@
-# scRNAseq-Pipeline-GastricCancer
-
-# Navigate to your project directory if you're not already there
-cd scRNAseq-Pipeline-GastricCancer
-
-# Create README.md and write content to it
-cat > README.md << 'EOF'
 # Single-Cell RNA Sequencing Analysis Pipeline for Gastric Cancer
 
 ## Project Overview
@@ -24,6 +17,7 @@ This repository presents an advanced computational pipeline for analyzing single
 ### Clone the Repository
 ```bash
 git clone git@github.com:BulutHamali/scRNAseq-Pipeline-GastricCancer.git
+```
 
 Dependencies
 Required Python packages:
@@ -39,30 +33,44 @@ scipy (scientific computing)
 gprofiler-official (functional enrichment)
 
 Install all dependencies:
-bashCopypip install -r requirements.txt
+```bash
+pip install -r requirements.txt
+```
+
 Pipeline Components
 1. Data Processing Module
+```python
 pythonCopyfrom src.preprocessing.data_processor import GastricCancerProcessor
 processor = GastricCancerProcessor('data/raw/counts_matrix.csv')
 processor.preprocess()
 processor.normalize()
 processor.filter_cells()
-2. Dimensional Reduction
+```
+
+
+3. Dimensional Reduction
+```bash
 pythonCopyfrom src.analysis.dimension_reducer import DimensionReducer
 reducer = DimensionReducer(processed_data)
 reducer.run_pca()
 reducer.run_umap()
 reducer.run_tsne()
-3. Clustering Analysis
+```
+
+5. Clustering Analysis
+```bash
 pythonCopyfrom src.analysis.cluster_analyzer import ClusterAnalyzer
 analyzer = ClusterAnalyzer(reduced_data)
 analyzer.perform_clustering(methods=['leiden', 'louvain', 'kmeans'])
 analyzer.evaluate_clusters()
-4. Biological Interpretation
+```
+7. Biological Interpretation
+```bash
 pythonCopyfrom src.analysis.gene_analyzer import GeneAnalyzer
 gene_analyzer = GeneAnalyzer(clustered_data)
 gene_analyzer.find_markers()
 gene_analyzer.perform_go_analysis()
+```
 Documentation
 
 Detailed tutorials and examples can be found in the 'analysis' directory
