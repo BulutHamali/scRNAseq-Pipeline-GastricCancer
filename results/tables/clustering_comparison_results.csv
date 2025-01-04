@@ -1,0 +1,19 @@
+,Embedding,Clustering Algorithm,Silhouette Score,Calinski-Harabasz Index,Davies-Bouldin Score
+0,X_pca,gmm,0.024,2.047,4.604
+1,X_pca,average_link,0.054,1.569,1.976
+2,X_pca,ward,0.022,2.903,4.697
+3,X_pca,spectral,0.007,1.611,5.813
+4,X_pca,louvain,-0.004,1.643,5.462
+5,X_pca,leiden,0.003,1.697,5.89
+6,X_tsne,gmm,0.564,225.167,0.503
+7,X_tsne,average_link,0.561,218.945,0.495
+8,X_tsne,ward,0.55,247.511,0.638
+9,X_tsne,spectral,0.561,233.384,0.547
+10,X_tsne,louvain,0.506,221.066,0.79
+11,X_tsne,leiden,0.499,235.402,0.727
+12,X_umap,gmm,0.611,495.292,0.455
+13,X_umap,average_link,0.615,431.037,0.355
+14,X_umap,ward,0.59,506.943,0.541
+15,X_umap,spectral,0.415,124.41,0.936
+16,X_umap,louvain,0.409,104.771,0.883
+17,X_umap,leiden,0.554,493.73,0.605
