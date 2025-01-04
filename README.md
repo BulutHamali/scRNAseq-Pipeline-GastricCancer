@@ -1,4 +1,4 @@
-# Single-Cell RNA Sequencing Analysis Pipeline for Gastric Cancer
+# Single-Cell RNA Sequencing Analysis Pipeline for Gastric Cancer (in progress)
 
 ## Project Overview
 This repository presents an advanced computational pipeline for analyzing single-cell RNA sequencing (scRNA-seq) data from gastric cancer samples. Our analysis framework builds upon and extends the methodologies discussed in recent gastric cancer research, particularly focusing on the GEO dataset GSE158631. The pipeline integrates state-of-the-art techniques for cell population identification, gene expression analysis, and pathway enrichment.
